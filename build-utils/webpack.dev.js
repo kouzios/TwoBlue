@@ -1,5 +1,6 @@
 const { DefinePlugin } = require('webpack');
 const Dotenv = require('dotenv-webpack');
+const path = require('path');
 
 module.exports = {
 	mode: 'development',
@@ -14,4 +15,7 @@ module.exports = {
     }),
   ],
   devtool: 'eval-source-map',
+  devServer: {
+    historyApiFallback: true
+  }
 };

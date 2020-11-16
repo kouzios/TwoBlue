@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
  
-import App from './views/App';
+import Routing from './Routing';
  
 const title = 'React with Webpack and Babel';
  
 ReactDOM.render(
-  <App title={title} />,
+  <Routing title={title} />,
   document.getElementById('app')
 );
  
