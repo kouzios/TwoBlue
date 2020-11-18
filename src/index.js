@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
- 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './common.css';
 import Routing from './Routing';
  
-const title = 'React with Webpack and Babel';
- 
 ReactDOM.render(
-  <Routing title={title} />,
+  <Routing/>,
   document.getElementById('app')
 );
  

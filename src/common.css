@@ -1,0 +1,252 @@
+html, body {
+  overflow-x: hidden !important;
+  height: 100%;
+}
+
+.container {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+.clickable { 
+  cursor: pointer;
+}
+
+.disabled {
+  cursor: not-allowed;
+}
+
+.default {
+  cursor: default;
+}
+
+.no-flex {
+  flex-grow: 0 !important;
+}
+
+.muted {
+  color: rgb(172, 187, 206) !important;
+}
+
+.banner-logo {
+  max-width: 125px;
+  max-height: 40px;
+}
+
+.small-logo {
+  max-width: 40px;
+  max-height: 40px;
+}
+
+#small-logo-header {
+  display: none !important;
+}
+
+#banner-logo-header {
+  display: flex !important;
+}
+
+/* Change logo size based on screen size */
+@media only screen and (max-device-width: 394px) {
+  #small-logo-header {
+    display: flex !important;
+  }
+
+  #banner-logo-header {
+    display: none !important;
+  }
+}
+
+.embolden {
+  font-weight: bold;
+  color: rgba(31, 133, 192, 1);
+}
+
+#selection .opacity-layer {
+  background: rgba(31, 133, 192, 0.8);
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+#selection #chart {
+  background: rgba(128, 142, 150, 0.8) !important;
+}
+
+#selection .opacity-layer .row {
+  padding: 5px 10px 5px 10px;
+}
+
+#selection #title h3{
+  text-align: center;
+}
+
+#selection {
+  margin-top: 50px;
+  /* height: calc(100vh - 55px); */
+  color: white;
+}
+
+#loading {
+  min-width: 250px;
+}
+
+#loading-img {
+  width: 100px;
+  height: 100px;
+  animation: rotation 2s infinite linear;
+}
+
+.footer-logo {
+  width: 55px;
+  height: 55px;
+}
+
+.github {
+  width: 40px;
+  height: 40px;
+}
+
+#footer-name {
+  font-size:  24px;
+  font-family:'Courier New', Courier, monospace;
+  margin: 5px 0px 0px 5px;
+}
+
+#footer-sitename {
+  font-size: 24px;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 10px 0px 0px 0px;
+}
+
+.loading-content {
+  color: lightgrey;
+}
+
+/* Control Panel Border Styling src = https://stackoverflow.com/a/46304846 */
+.text-on-pannel {
+  background: #fff none repeat scroll 0 0;
+  height: auto;
+  margin-left: 20px;
+  padding: 3px 5px;
+  position: absolute;
+  margin-top: -50px;
+}
+
+.panel {
+  /* for text on pannel */
+  margin-top: 27px !important;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+.tooltip.show {
+  opacity: 1 !important;
+}
+
+.panel-body {
+  padding: 30px 30px 30px 30px;
+}
+/* End Control Panel Border Styling */
+
+.custom-panel {
+  max-height: 600px;
+  margin-bottom: 75px;
+}
+
+.custom-panel .contents {
+  max-height: 575px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.mtg-overlay {
+  width: 244px !important;
+  height: 340px  !important;
+}
+
+.mtg-container, .mtg-container .tooltip-inner {
+  background-color:transparent !important;
+}
+
+.commander {
+  width: 292px !important;
+  height: 408px  !important;
+}
+
+.mtg {
+  width: 146px !important;
+  height: 204px  !important;
+}
+
+.mtg .flipped {
+  position: relative;
+  top: -7em;
+  left: 7em;
+  width: 35px;
+  height: 35px;
+}
+
+.mtg .delete {
+  position: relative;
+  top: -13em;
+  left: 7em;
+  width: 35px;
+  height: 35px;
+  visibility: hidden;
+}
+
+.mtg:hover .delete {
+  visibility: visible;
+}
+
+.badMessage {
+  color: red;
+}
+
+.ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#uniqueQuantity {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media only screen and (max-device-width: 420px) {
+  #overlay #cards { 
+    -webkit-column-gap: 20px;
+        -moz-column-gap: 20px;
+            column-gap: 20px;
+    -webkit-column-count: 1 !important;
+        -moz-column-count: 1 !important;
+            column-count: 1 !important;
+  }
+}
+
+#overlay #cards {
+  -webkit-column-gap: 20px;
+      -moz-column-gap: 20px;
+          column-gap: 20px;
+  -webkit-column-count: 2;
+      -moz-column-count: 2;
+          column-count: 2;
+}
+
+
+
+.flip {
+  color: lightgrey;
+  font-size: 12px;
+}
+
+.modal #import {
+  min-height: 400px;
+}
+
+.decklist-card {
+  font-size: 14px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
