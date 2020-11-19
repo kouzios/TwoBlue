@@ -43,7 +43,7 @@ module.exports = {
       // {
       //   test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, 
       //   use: ['url'],
-      },
+      // },
     ],
   },
   resolve: {
@@ -56,7 +56,8 @@ module.exports = {
   plugins: [
 			new HtmlWebpackPlugin({
 			title: 'Hello Webpack bundled JavaScript Project',
-			template: path.resolve(__dirname, '..', './src/index.html'),
+      template: path.resolve(__dirname, '..', './src/index.html'),
+      favicon: './src/assets/images/favicon.ico',
 		}),
 		new webpack.HotModuleReplacementPlugin(),
 		new CleanWebpackPlugin(),
