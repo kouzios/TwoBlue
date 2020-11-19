@@ -12,7 +12,7 @@ const MTGCardOverlay = ({ removeCard, title, ...props }) => {
   }, []);
 
   const getCard = async () => {
-    const res = await fetch("/api/cards?title=" + title);
+    const res = await fetch(process.env.REACT_APP_API_ENDPOINT + '/images/' + title);
     const status = res.status;
     if (status !== 200) {
       //Delete card if invalid
