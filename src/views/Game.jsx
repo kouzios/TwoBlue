@@ -4,6 +4,7 @@ import regeneratorRuntime from "regenerator-runtime"; //Used to allow async func
 
 import CustomPanel from "../components/CustomPanel";
 import MTGCard from "../components/MTGCard";
+import PersonPlus from '../assets/svgs/PersonPlus';
 
 const defaultBoard = new Set();
 const defaultGraveyard = new Set();
@@ -131,9 +132,13 @@ const Game = ({ setView, ...props }) => {
     }
   };
 
+  const createLink = () => {
+    return "TODO";
+  }
+
   return (
     <div id="game">
-      <Row className="justify-content-center">
+      <Row className="justify-content-center align-items-center">
         <CustomPanel md={6} title="Control Panel">
           <Button onClick={hardReset}>Hard Reset</Button>
           <label>
@@ -146,6 +151,9 @@ const Game = ({ setView, ...props }) => {
               className="ml-2"
             />
           </label>
+          <div className="clickable"  onClick={()=>alert("Link created is: " + createLink())}>
+            <PersonPlus/>
+          </div>
         </CustomPanel>
       </Row>
       {gameState()}
