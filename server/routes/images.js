@@ -4,10 +4,6 @@ const fetch = require("node-fetch");
 const router = Router();
 const images = new Map();
 
-router.get("/", (req, res) => {
-  return res.send("BASIC IMAGES REQUEST");
-});
-
 router.get("/:cardName", async (req, res) => {
   let cardName = req.params.cardName;
   console.log(cardName);
