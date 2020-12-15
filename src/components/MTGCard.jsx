@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import MTGCardOverlay from "./MTGCardOverlay";
 import { OverlayTrigger, Tooltip, Button, Card } from "react-bootstrap";
 import errorHandling from "../scripts/errorHandling";
+import Flip from '../assets/svgs/Flip';
 
 const MTGCard = ({ removeCard, title, ...props }) => {
   const [firstSide, setFirstSide] = useState(null);
@@ -72,7 +73,7 @@ const MTGCard = ({ removeCard, title, ...props }) => {
           variant="secondary"
           onClick={() => setFlipped((oldFlipped) => !oldFlipped)}
         >
-          F
+          <Flip/>
         </Button>
       ) : null}
     </Card>
