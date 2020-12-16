@@ -11,20 +11,25 @@ const defaultGraveyard = new Set();
 
 const Game = ({ setView, ...props }) => {
   const [board, setBoard] = useState(defaultBoard);
-  const [displayBoard, setDisplayBoard] = useState(null);
   const [graveyard, setGraveyard] = useState(defaultGraveyard);
-  const [displayGraveyard, setDisplayGraveyard] = useState(null);
-  const [enabledGraveyard, setEnabledGraveyard] = useState(true);
+  const [displayBoard, setDisplayBoard] = useState(null);
+  const [displayGraveyard, setDisplayGraveyard] = useState(true);
+  const [enabledGraveyard, setEnabledGraveyard] = useState(null);
 
   useEffect(() => {
     if (!window.localStorage.getItem("board"))
       window.localStorage.setItem("board", JSON.stringify([]));
     if (!window.localStorage.getItem("graveyard"))
       window.localStorage.setItem("graveyard", JSON.stringify([]));
+    if(!window.localStorage.getItem("save-graveyard"))
+      window.localStorage.setItem("save-graveyard", true);
     const savedBoard = JSON.parse(window.localStorage.getItem("board"));
     const savedGraveyard = JSON.parse(window.localStorage.getItem("graveyard"));
+    const doSaveGraveyard = window.localStorage.getItem("save-graveyard");
+    console.log(doSaveGraveyard)
     setBoard(new Set(savedBoard));
     setGraveyard(new Set(savedGraveyard));
+    setEnabledGraveyard(doSaveGraveyard === "true");
   }, []);
 
   useEffect(() => {
@@ -56,6 +61,11 @@ const Game = ({ setView, ...props }) => {
     setDisplayGraveyard(clone);
     //eslint-disable-next-line
   }, [graveyard]);
+
+  const updateEnabledGraveyard = (checked) => {
+    setEnabledGraveyard(checked);
+    window.localStorage.setItem("save-graveyard", checked);
+  }
 
   const removeCard = (location, cardName, optionalStatus) => {
     //If we have a status code (from adding, getting a status code, then removing as a result) then handle
@@ -147,7 +157,7 @@ const Game = ({ setView, ...props }) => {
               name="enabledGraveyard"
               type="checkbox"
               checked={enabledGraveyard}
-              onChange={(e) => setEnabledGraveyard(e.target.checked)}
+              onChange={(e) => updateEnabledGraveyard(e.target.checked)}
               className="ml-2"
             />
           </label>
