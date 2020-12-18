@@ -28,7 +28,7 @@ const MTGCard = ({ removeCard, title, ...props }) => {
     const img = await res.json();
     setFirstSide(img[0]);
 
-    if (img[1]) {
+    if (img[1]) {//If there's a flip side to the card
       setFlipped(false);
       setSecondSide(img[1]);
     }
@@ -41,7 +41,7 @@ const MTGCard = ({ removeCard, title, ...props }) => {
   );
 
   return (
-    <Card className={props.commander ? "commander" : "mtg"}>
+    <Card className={"mtg"}>
       <OverlayTrigger
         placement="auto"
         delay={{ show: 250, hide: 400 }}
@@ -49,13 +49,13 @@ const MTGCard = ({ removeCard, title, ...props }) => {
       >
         {flipped === true ? (
           <img
-            className={props.commander ? "commander" : "mtg"}
+            className={"mtg"}
             src={secondSide}
             alt={title}
           />
         ) : (
           <img
-            className={props.commander ? "commander" : "mtg"}
+            className={"mtg"}
             src={firstSide}
             alt={title}
           />
