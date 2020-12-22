@@ -144,10 +144,6 @@ const Game = ({ setView, ...props }) => {
     }
   };
 
-  const createLink = () => {
-    return "TODO";
-  }
-
   return (
     <div id="game">
       <Row className="justify-content-center align-items-center">
@@ -163,9 +159,6 @@ const Game = ({ setView, ...props }) => {
               className="ml-2"
             />
           </label>
-          <div className="clickable"  onClick={()=>alert("Link created is: " + createLink())}>
-            <PersonPlus/>
-          </div>
         </CustomPanel>
       </Row>
       {gameState()}
