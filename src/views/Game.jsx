@@ -62,6 +62,7 @@ const Game = ({ setView, ...props }) => {
     //eslint-disable-next-line
   }, [graveyard]);
 
+  //When the enable/disable graveyard check is hit, update the localstorage
   const updateEnabledGraveyard = (checked) => {
     setEnabledGraveyard(checked);
     window.localStorage.setItem("save-graveyard", checked);
@@ -69,7 +70,7 @@ const Game = ({ setView, ...props }) => {
 
   const removeCard = (location, cardName, optionalStatus) => {
     //If we have a status code (from adding, getting a status code, then removing as a result) then handle
-    if (optionalStatus && typeof optionalStatus === "number") {
+    if (optionalStatus && typeof optionalStatus === "number") {//TODO: Add more cases
       switch (optionalStatus) {
         case 404:
           alert("Error, card does not exist in Scryfall's database");
@@ -86,12 +87,13 @@ const Game = ({ setView, ...props }) => {
     } else if (location === "graveyard") {
       let clone = new Set([...graveyard]);
       clone.delete(cardName);
-      setGraveyard(cardName);
+      setGraveyard(clone);
     } else {
       alert("Failed to remove card");
     }
   };
 
+  //Adds a card to their respective location (board or graveyard)
   const addCard = async (location) => {
     let cardName = prompt(
       "What card would you like to add to " +
